@@ -3,8 +3,10 @@ on: push
 jobs:
   trigger-build:
     runs-on: ubuntu-latest
+    environment: Actions
     steps:
       - shell: bash
         env:
           TRIGGER_URL: ${{ secrets.TriggerUrl }}
-        run: curl -X POST -d {} "$TRIGGER_URL"
+        run: |
+          curl -X POST -d {} "$TRIGGER_URL"
