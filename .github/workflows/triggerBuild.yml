@@ -7,4 +7,4 @@ jobs:
       - shell: bash
         env:
           TRIGGER_URL: ${{ secrets.TriggerUrl }}
-        run: curl -X POST -d {} $TRIGGER_URL
+        run: curl -X POST -d {} "$TRIGGER_URL"
